@@ -1,0 +1,30 @@
+from setuptools import find_packages, setup
+
+package_name = 'agricore_telemetry'
+
+setup(
+    name=package_name,
+    version='0.0.0',
+    packages=find_packages(exclude=['test']),
+    data_files=[
+        ('share/ament_index/resource_index/packages',
+            ['resource/' + package_name]),
+        ('share/' + package_name, ['package.xml']),
+    ],
+    install_requires=['setuptools'],
+    zip_safe=True,
+    maintainer='bruce',
+    maintainer_email='bruce@todo.todo',
+    description='TODO: Package description',
+    license='TODO: License declaration',
+    extras_require={
+        'test': [
+            'pytest',
+        ],
+    },
+    entry_points={
+        'console_scripts': [
+            'agricore_telemetry_node = agricore_telemetry.node:main',
+        ],
+    },
+)
